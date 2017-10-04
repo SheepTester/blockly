@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>no tset is not a typo</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="giggles"/>
+    <script src="../blockly_compressed.js"></script>
+    <script src="../blocks_compressed.js"></script>
+    <script src="../msg/js/en.js"></script>
+  </head>
+  <body>
+    <xml id="palette" style="display: none">
+      <category name="default" colour='66'>
+        <block type="controls_repeat_ext"></block>
+        <block type="text"></block>
+        <block type="text_print"></block>
+        <block type="logic_compare"></block>
+        <block type="math_number"></block>
+        <block type="math_arithmetic"></block>
+      </category>
+      <sep gap='5'></sep>
+      <category name="mine" colour='0'>
+        <category name="hi" colour='0'>
+          <block type="giggleblock"></block>
+        </category>
+        <block type="giggleblock"></block>
+        <label text="giggle-wumps"></label>
+        <button text="pointless button" callbackKey='lol'></button>
+      </category>
+    </xml>
+    <div id="placeforblocks" style='height:500px;width:700px;'></div>
+
+    <script>
+var thing=Blockly.inject('placeforblocks',{
+  toolbox:document.querySelector('#palette'),
+  comments:false,
+  collpase:true,
+  oneBasedIndex:false,
+  trashcan:false
+});
+thing.registerButtonCallback('lol',e=>{});
+Blockly.Blocks['giggleblock']={
+  init() {
+    this.setColour(0);
+    this.setOutput(true,'Number');
+    this.appendDummyInput().appendField('wow');
+    this.appendValueInput('LIST')
+  }
+};
+    </script>
+  </body>
+  <!-- MADE BY SEAN -->
+</html>
